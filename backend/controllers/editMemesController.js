@@ -5,12 +5,12 @@ module.exports = {
         try {
             const data = await Meme.findOne(
                 { id: req.params.id }
-            )
+            )   
             const myQuery = { id: req.params.id };
             const updatedUrl = req.body.hasOwnProperty('url') ? req.body.url : data.url;
 
             const updatedCaption =  req.body.hasOwnProperty('caption') ? req.body.caption : data.caption;
-
+            
             const newValue = {
                 $set: {
                     id: data.id,

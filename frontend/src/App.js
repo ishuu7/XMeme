@@ -7,7 +7,7 @@ import FormComponent from './components/FormComponent';
 const App = () => {
   return (
     <Grid container direction = "column">
-      <Grid item>
+      <Grid item >
         <ButtonAppBar />
       </Grid>
       <FormComponent /> 

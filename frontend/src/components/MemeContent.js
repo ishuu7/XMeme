@@ -7,7 +7,7 @@ const MemeContent = (props) => {
 
     const getMemeCard = (memeObj, idx) => {
         return (
-            <Grid key = {idx} item xs = {12} sm = {4} lg = {3} >
+            <Grid key = {idx} item xs = {12} sm = {6} lg = {4} >
                 <MemeCard key={memeObj.id} {...memeObj} fun = {props.fn}/>
             </Grid>
         )

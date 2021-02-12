@@ -32,9 +32,9 @@ module.exports = {
         try {
             const data = await Meme.find();
             const modifiedData = modifyData(data);  
-            res.json(modifiedData);
+            res.status(200).json(modifiedData);
         } catch (error) {
-            res.json("err", error);
+            res.status(500).json('Internal Server Error');
         }
     },
 
@@ -42,7 +42,7 @@ module.exports = {
         try {
             const data = await Meme.findOne({id: req.params.id});
             const modifiedJson = modifyJson(data);
-            res.json(modifiedJson);
+            res.status(200).json((modifiedJson));
         } catch (error) {
             res.sendStatus(404);
         }

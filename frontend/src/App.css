@@ -1,6 +1,7 @@
-/* .App {
+.App {
   text-align: center;
-} */
+  overflow-x:none
+}
 
 
 .App-header {

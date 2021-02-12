@@ -1,0 +1,225 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "X Meme API",
+        "description": "XMeme - Crio Winter of Doing Stage 2B submission",
+        "version": "1.0.0",
+        "contact": {
+            "email": "narendramanglani04@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/memes": {
+            "get": {
+                "tags": [
+                    "memes"
+                ],
+                "description": "Get Latest 100 Memes from the database",
+                "responses": {
+                    "200": {
+                        "description": "Retrieved all memes",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Meme"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "memes"
+                ],
+                "description": "Post a new Meme.",
+                "parameters": 
+                [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Meme Request",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PostMeme"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Posted a Meme successfully.",
+                        "schema": {
+                            "$ref":"#/definitions/models.IdMeme"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/memes/{id}": {
+            "get": {
+                "tags": [
+                    "memes"
+                ],
+                "description": "Get Meme by Id",
+                "parameters": 
+                [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "'id' of Meme",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found Meme with the id",
+                        "schema": {
+                            "$ref": "#/definitions/models.Meme"
+                        }
+                    },
+                    "404": {
+                        "description": "Meme not found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "memes"
+                ],
+                "description": "Edit a Meme.",
+                "parameters": 
+                [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "'id' of Meme",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Edit a Meme",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditMeme"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Edited a Meme successfully."
+                    },
+                    "404": {
+                        "description": "Meme not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "memes"
+                ],
+                "description": "Delete a Meme.",
+                "parameters": 
+                [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "'id' of Meme",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted a Meme successfully."
+                    },
+                    "404": {
+                        "description": "Meme not found"
+                    },
+                    "504": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+
+    },
+
+    "definitions": {
+        "models.Meme": {
+            "title": "Meme",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "models.IdMeme": {
+            "title": "IdMeme",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "models.PostMeme": {
+            "title": "PostMeme",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "models.EditMeme": {
+            "title": "EditMeme",
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                }
+            }
+        }
+
+    }
+}
+

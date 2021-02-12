@@ -29,6 +29,8 @@ const useStyles = makeStyles({
   }
 });
 
+
+
 export default function MemeCard(props) {
   const classes = useStyles();
   // console.log(props)
