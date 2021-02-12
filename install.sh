@@ -8,14 +8,8 @@ sudo apt install -y mongodb-org
 
 sudo systemctl start mongod
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 
-. ~/.nvm/nvm.sh
-
-nvm install node
-
-node -v
-
-npm -v
+sudo apt-get install -y nodejs
 
 
