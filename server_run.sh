@@ -1,5 +1,7 @@
 cd backend
-touch .env
-echo "DB_CONN='mongodb://localhost:27017' PORT=8081"
+
+export NODE_PROD_DB='mongodb://localhost:27017'
+
 npm install
+
 npm start
