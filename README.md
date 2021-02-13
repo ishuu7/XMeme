@@ -1,23 +1,23 @@
 <h1 align="center">
-🌐 XMeme
+🌐 <a href = "https://xmeme-ishuu7.netlify.app/">XMeme</a>
 </h1>
 <h2 align ="center">Post and enjoy MEMES</h2>
 
 <p align="center">
-   <!-- <a href="https://travis-ci.com/amazingandyyy/mern">
-      <img src="https://travis-ci.com/amazingandyyy/mern.svg?branch=master" />
-   </a> -->
    <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
-   <!-- <a href="https://circleci.com/gh/amazingandyyy/mern">
-      <img src="https://circleci.com/gh/amazingandyyy/mern.svg?style=svg" />
-   </a> -->
 </p>
 
 > XMeme is a platform where people can post the memes and see the memes posted by other users, It isfullstack implementation in MongoDB, ExpressJS, ReactJS, NodeJS(MERN).
 
 The project is the part of Crio Winter's of doing stage 2B.
+
+### Site is live <a href = "https://xmeme-ishuu7.netlify.app/"> here </a>.
+
+### Swagger is <a href = "https://xmeme-ishuu7.herokuapp.com/swagger-ui"> here </a>.
+<br />
+
 
 ## clone the app
 ```terminal
