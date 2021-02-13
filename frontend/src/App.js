@@ -2,6 +2,7 @@ import './App.css';
 import { Grid } from "@material-ui/core";
 import ButtonAppBar from './components/ButtonAppBar';
 import FormComponent from './components/FormComponent';
+import FooterC from './components/FooterC';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
         <ButtonAppBar />
       </Grid>
       <FormComponent /> 
+      <FooterC />
     </Grid>
   );
 };

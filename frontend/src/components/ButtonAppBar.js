@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Button, Toolbar, Typography, withTheme } from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 import XMemeLogo from '../media/XMemeLogo.png';
-import EmailIcon from '@material-ui/icons/Email';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,9 +37,6 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title} align = 'right'>
             <Button variant="contained" color="secondary" endIcon = {<LaunchIcon />} className = {classes.button} href = "https://xmeme-ishuu7.herokuapp.com/swagger-ui" target = "_blank">
               Swagger
-            </Button>
-            <Button variant="contained" color="primary" href="mailto:narendramanglani04@gmail.com" target = "_blank" className = {classes.button} endIcon = {<EmailIcon />}> 
-              Contact Me
             </Button>
           </Typography>
         </Toolbar>

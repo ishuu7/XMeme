@@ -101,7 +101,7 @@ export default function FormDialog(props) {
 
     const validationSchema = Yup.object().shape({
         caption: Yup.string().required("Required"),
-        url: Yup.string().required('Please enter the URL')
+        url: Yup.string().required('URL can\'t be empty')
             .test('valid-image-url', 'Must use valid image URL', async value =>
             await testImage(value, 1000).then(status => status === 'success')
         )

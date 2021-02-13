@@ -83,7 +83,7 @@ export default function FormComponent() {
     });
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required("Name can't be Empty"),
+        name: Yup.string().required("Name can't be empty"),
         caption: Yup.string().required("Caption can't be empty"),
         url: Yup.string().required('URL can\'t be empty')
             .test('valid-image-url', 'Must use valid image URL', value =>

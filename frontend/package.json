@@ -14,6 +14,8 @@
     "formik": "^2.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-emoji-render": "^1.2.4",
+    "react-made-with-love": "^1.0.1",
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0",
     "yup": "^0.32.8"
