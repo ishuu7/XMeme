@@ -167,4 +167,4 @@ narendramanglani04@gmail.com
 
 
 ### License
-[MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
+[MIT](https://gitlab.crio.do/COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/narendramanglani04-me_buildout_xmeme/-/blob/master/LICENSE)
