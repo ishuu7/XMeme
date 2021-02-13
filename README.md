@@ -146,21 +146,20 @@ yup: ^0.32.8
 # Screenshots of this project
 
 User visiting the Home Page
-![User visiting the Home Page](https://imgur.com/WZz9BJv)
-![User visiting the Home Page](https://imgur.com/g2x0PLi)
+![User visiting the Home Page](https://imgur.com/WZz9BJv.png)
+![User visiting the Home Page](https://imgur.com/g2x0PLi.png)
 
 User can Post the Meme by filling the form
-![User can Post the Meme by filling the form](https://imgur.com/FzFY8Qa)
+![User can Post the Meme by filling the form](https://imgur.com/FzFY8Qa.png)
 
 Meme is now posted below
-![Meme is now posted below](https://imgur.com/WPZUjTc)
+![Meme is now posted below](https://imgur.com/WPZUjTc.png)
 
 User can edit the Meme by clicking edit and change the url, caption or both.
-![User editing the Meme](https://imgur.com/Lw8UTr8)
+![User editing the Meme](https://imgur.com/Lw8UTr8.png)
 
 Admin can delete any meme by entering the password.
-![admin deleting the meme](https://imgur.com/undefined)
-
+![admin deleting the meme](https://i.imgur.com/My3JB7h.png)
 
 
 ## Contact Me: 
