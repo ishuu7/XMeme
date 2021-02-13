@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { makeStyles } from '@material-ui/core/styles';
 import DialogContentText from '@material-ui/core/DialogContentText';
@@ -10,6 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
 import axios from '../api/axios';
 import * as Yup from 'yup'
+import Alert from '@material-ui/lab/Alert';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -35,6 +35,11 @@ export default function FormDialog(props) {
     const [open, setOpen] = React.useState(false);
 
     const [openDelete, setOpenDelete] = React.useState(false);
+
+    const [isError, setIsError] = React.useState(false);
+    const [errorName, setErrorName] = React.useState('');
+
+
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -112,7 +117,11 @@ export default function FormDialog(props) {
                 .then(() => props.meme.func());
             handleClose();
         } catch (error) {
-            console.log(error);
+            setIsError(true)
+            setErrorName(error.response.data)
+            setTimeout(() => {
+                setIsError(false)
+            }, 3000);
         }
     }
 
@@ -122,8 +131,7 @@ export default function FormDialog(props) {
                 .then(() => props.meme.func());
             handleCloseDelete();
         } catch (error) {
-            console.log(error);
-            handleCloseDelete();
+            
         }
     }
 
@@ -197,7 +205,9 @@ export default function FormDialog(props) {
                             >
                                 Cancel
                             </Button>
+                            {isError ? <Alert severity="error">{errorName}</Alert> : ''}
                         </Form>
+
                     )}
                 </Formik>
             </DialogContent>

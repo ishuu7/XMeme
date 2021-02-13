@@ -10,7 +10,7 @@ module.exports = {
         }
         const isThereAnotherMeme = await Meme.findOne(currObject);
         if(isThereAnotherMeme) {
-            res.sendStatus(409).send('Conflict');
+            res.status(409).send('Conflict');
         }
         else {
             const newMeme = new Meme({

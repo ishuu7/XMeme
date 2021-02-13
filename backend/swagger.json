@@ -12,10 +12,10 @@
             "url": "https://opensource.org/licenses/MIT"
         }
     },
-    "host": "localhost:8081",
+    "host": "xmeme-ishuu7.herokuapp.com",
     "basePath": "/",
     "schemes": [
-        "http"
+        "https"
     ],
     "paths": {
         "/memes": {
@@ -65,6 +65,9 @@
                     },
                     "500": {
                         "description": "Internal Server Error"
+                    },
+                    "409": {
+                        "description": "Conflict"
                     }
                 }
             }
@@ -127,6 +130,9 @@
                     },
                     "404": {
                         "description": "Meme not found"
+                    },
+                    "409": {
+                        "description": "Conflict"
                     }
                 }
             },

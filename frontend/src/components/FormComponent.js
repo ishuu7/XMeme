@@ -27,14 +27,20 @@ export default function FormComponent() {
     const classes = useStyles();
     const [memes, setMemes] = useState([]);
     const [memesChange, setMemesChange] = useState(0);
-    const [isError, setIsError] = useState((false));
+    const [isError, setIsError] = useState(false);
+    const [errorName, setErrorName] = useState('')
+
 
     let getMemes = async() => {
         try {
             const response = await axios.get('/memes')
             setMemes(response.data);
         } catch (error) {
-            console.log(error);
+            setIsError(true)
+            setErrorName('Internal Server Error')
+            setTimeout(() => {
+                setIsError(false)
+            }, 3000);
         }
     }
 
@@ -95,10 +101,13 @@ export default function FormComponent() {
                 .then(() => props.resetForm())
                 .then(() => props.setSubmitting(false))
                 .then(() => updateMemes())
-            setIsError(false)
         } catch (error) {
             setIsError(true)
-        }   
+            setErrorName(error.response.data)
+            setTimeout(() => {
+                setIsError(false)
+            }, 3000);
+        }
     }
 
     useEffect(() => {
@@ -176,7 +185,7 @@ export default function FormComponent() {
                                     >
                                         {props.isSubmitting ? "Loading" : "Submit"}
                                     </Button>
-                                    {isError ? <Alert severity="error">Conflict</Alert> : ''}
+                                    {isError ? <Alert severity="error">{errorName}</Alert> : ''}
                                 </Form>
                             )}
                         </Formik>
