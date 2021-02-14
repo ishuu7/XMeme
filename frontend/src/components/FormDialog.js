@@ -227,6 +227,7 @@ export default function FormDialog(props) {
                                 id="outlined-multiline-static"
                                 label="Password"
                                 multiline
+                                type = "password"
                                 style={{ margin: "8 auto" }}
                                 fullWidth
                                 margin="normal"
@@ -235,7 +236,6 @@ export default function FormDialog(props) {
                                 }}
                                 variant="outlined"
                                 name="Password"
-                                type="password"
                                 helperText={<ErrorMessage name="Password" />}
                                 error = {deleteProp.errors.Password && deleteProp.errors.Password ? true : false}
                                 required
